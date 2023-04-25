@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638176075372233109
-    m_Hash: 2942178831
+      ticks: 638180393329688633
+    m_Hash: 1851450919
   m_LockFileStatus:
     m_FilePath: C:/Users/nkriger/Documents/GitHub/Unity-280/AngryBirds/Angry-Birds_lab/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638176075633321425
-    m_Hash: 2706776021
+      ticks: 638180393329698600
+    m_Hash: 3828459346
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -105,6 +105,7 @@ m_PackageAssets:
         - 2.0.0
         - 2.0.1
         - 2.0.3
+        - 2.0.4
         - 2.1.0-preview.3
         - 2.1.0-preview.5
         - 2.1.0-preview.6
@@ -122,6 +123,7 @@ m_PackageAssets:
         - 2.0.0
         - 2.0.1
         - 2.0.3
+        - 2.0.4
         - 2.1.0-preview.3
         - 2.1.0-preview.5
         - 2.1.0-preview.6
@@ -225,6 +227,7 @@ m_PackageAssets:
         - 3.0.17
         - 3.0.18
         - 3.0.20
+        - 3.0.21
         compatible:
         - 1.0.2
         - 1.0.6
@@ -261,6 +264,7 @@ m_PackageAssets:
         - 3.0.17
         - 3.0.18
         - 3.0.20
+        - 3.0.21
         verified: 2.0.7
       dependencies:
       - name: com.unity.test-framework
