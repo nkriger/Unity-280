@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Moveset
 {
     //Create a working input system for camera and character movement
 
-    public float speed;
+    
     private PlayerInput playerInput;
     private Rigidbody rigidBody;
 
@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         movement();
+        guardCheck();
+        stance();
     }
 
     void movement()
@@ -33,5 +35,7 @@ public class PlayerController : MonoBehaviour
     {
 
     }
+
+    
 
 }
