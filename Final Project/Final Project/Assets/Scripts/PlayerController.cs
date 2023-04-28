@@ -6,11 +6,9 @@ using UnityEngine.InputSystem;
 public class PlayerController : Moveset
 {
     //Create a working input system for camera and character movement
-
     
     private PlayerInput playerInput;
     private Rigidbody rigidBody;
-
 
     private void Awake()
     {

@@ -37,13 +37,11 @@ public class Moveset : MonoBehaviour
             guardDown = false;
         }
         if (guardDown)
-        {
-            
+        {           
             Up = false;
             Left = false;
             Right = false;
-            neutral = false;
-            
+            neutral = false;           
         }
     }
 
@@ -67,6 +65,7 @@ public class Moveset : MonoBehaviour
             Up = false;
             Right = false;
             neutral = false;
+            Debug.Log("Left");
         }
         if (Right)
         {          
@@ -75,5 +74,4 @@ public class Moveset : MonoBehaviour
             neutral = false;
         }
     }
-
 }
