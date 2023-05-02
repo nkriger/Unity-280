@@ -2724,3 +2724,4 @@ Received Import Request.
   path: Assets/Scripts/cloudCrafter.cs
   artifactKey: Guid(56a8d2226e3fca941b0fba2b38aa1755) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/cloudCrafter.cs using Guid(56a8d2226e3fca941b0fba2b38aa1755) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c07340c4429fe25d1a5ff32e80a48bc2') in 0.005322 seconds 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
