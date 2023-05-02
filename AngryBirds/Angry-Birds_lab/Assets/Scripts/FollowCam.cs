@@ -54,21 +54,41 @@ public class FollowCam : MonoBehaviour
     private void cameraMovement()
     {
         //only moves if there is something to follow
-        if (poi == null) return;
+        //if (poi == null) return;
 
         //get position of poi
-        Vector3 destination = poi.transform.position;
+        //Vector3 destination = poi.transform.position;
+        Vector3 destination;
+
+        if(poi == null)
+        {
+            destination = Vector3.zero;
+        }
+        else
+        {
+            destination = poi.transform.position;
+
+            //if poi is a projectile, check to see if its at rest
+            if(poi.tag == "projectile")
+            {
+                //if poi is not moving
+                if (poi.GetComponent<Rigidbody>().IsSleeping())
+                {
+                    poi = null;
+                }
+                
+            }
+            //limiting x andy values so the floor isnt shown as much
+            destination.x = Mathf.Max(minXY.x, destination.x);
+            destination.y = Mathf.Max(minXY.y, destination.y);
+
+            //set orthographic size to keep ground in view
+            this.GetComponent<Camera>().orthographicSize = destination.y + 10;
+
+            destination = Vector3.Lerp(transform.position, destination, easing);
+        }
 
         
-
-        //limiting x andy values so the floor isnt shown as much
-        destination.x = Mathf.Max(minXY.x, destination.x);
-        destination.y = Mathf.Max(minXY.y, destination.y);
-
-        //set orthographic size to keep ground in view
-        this.GetComponent<Camera>().orthographicSize = destination.y + 10;
-
-        destination = Vector3.Lerp(transform.position, destination, easing);
         //retain the destination.z of camZ
         destination.z = camZ;
 

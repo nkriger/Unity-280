@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class Slingshot : MonoBehaviour
 {
+    public static Slingshot Instance;
+
     [SerializeField]
     public GameObject launchPoint;
 
     public GameObject prefabProjectile;
 
     [SerializeField]
-    private Vector3 launchPos;
+    public Vector3 launchPos;
     [SerializeField]
     private GameObject projectile;
     [SerializeField]
@@ -25,6 +27,7 @@ public class Slingshot : MonoBehaviour
         launchPoint = launchPointTransform.gameObject;
         launchPoint.SetActive(false);
         launchPos = launchPointTransform.position;
+        Instance = this;
     }
 
     private void OnMouseEnter()
