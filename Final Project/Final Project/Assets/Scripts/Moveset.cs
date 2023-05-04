@@ -61,20 +61,20 @@ public class Moveset : MonoBehaviour
         {                  
             Left = false;
             Right = false;
-            neutral = false;
+            //neutral = false;
         }
-        if (Left)
+        else if (Left)
         {           
             Up = false;
             Right = false;
-            neutral = false;
+            //neutral = false;
             Debug.Log("Left");
         }
-        if (Right)
+        else if (Right)
         {          
             Up = false;
             Left = false;
-            neutral = false;
+            //neutral = false;
         }
     }
 }
