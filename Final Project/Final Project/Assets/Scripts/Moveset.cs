@@ -47,6 +47,7 @@ public class Moveset : MonoBehaviour
 
     public void stance()
     {
+        /*
         if (guardUp && !Up && !Left && !Right)
         {
             neutral = true;
@@ -54,6 +55,8 @@ public class Moveset : MonoBehaviour
             Left = false;
             Right = false;
         }
+        */
+       
         if (Up)
         {                  
             Left = false;
