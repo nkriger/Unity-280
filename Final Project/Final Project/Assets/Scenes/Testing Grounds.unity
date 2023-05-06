@@ -1039,6 +1039,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.048
       objectReference: {fileID: 0}
+    - target: {fileID: -8513424388201257645, guid: ea8ebf0b3f9c0d14dacf59d1b3231cd9, type: 3}
+      propertyPath: m_TagString
+      value: Left
+      objectReference: {fileID: 0}
     - target: {fileID: -6067185528594298527, guid: ea8ebf0b3f9c0d14dacf59d1b3231cd9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1051,10 +1055,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: For Honor mouse area
       objectReference: {fileID: 0}
+    - target: {fileID: 2040542448765327740, guid: ea8ebf0b3f9c0d14dacf59d1b3231cd9, type: 3}
+      propertyPath: m_TagString
+      value: Top
+      objectReference: {fileID: 0}
     - target: {fileID: 4253280567622488715, guid: ea8ebf0b3f9c0d14dacf59d1b3231cd9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: fb1318b0ae99a9347adfdfd9743c47d4, type: 2}
+    - target: {fileID: 7750397243111347764, guid: ea8ebf0b3f9c0d14dacf59d1b3231cd9, type: 3}
+      propertyPath: m_TagString
+      value: Right
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea8ebf0b3f9c0d14dacf59d1b3231cd9, type: 3}
 --- !u!1 &2088450895
@@ -1089,6 +1101,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80f80f1747c4c5f4098a230dcb6ff1f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
+  Health: 0
+  guardUp: 0
+  guardDown: 0
+  neutral: 0
+  Up: 0
+  Left: 0
+  Right: 0
 --- !u!65 &2088450897
 BoxCollider:
   m_ObjectHideFlags: 0
