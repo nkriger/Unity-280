@@ -16,6 +16,7 @@ public class PlayerController : Moveset
         playerInput = new PlayerInput();
         playerInput.Enable();
     }
+
     private void Update()
     {
         movement();
@@ -25,15 +26,15 @@ public class PlayerController : Moveset
 
     void movement()
     {
+        /*
         Vector3 moveVec = playerInput.Movement.WASD.ReadValue<Vector3>();
         transform.Translate(moveVec * speed * Time.deltaTime);
+        */
+        //removed to focus on attack freely
     }
 
     void mouseCheck()
     {
 
     }
-
-    
-
 }
