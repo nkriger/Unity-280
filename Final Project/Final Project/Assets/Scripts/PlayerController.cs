@@ -33,8 +33,8 @@ public class PlayerController : Moveset
         //removed to focus on attack freely
     }
 
-    void mouseCheck()
+    void OnMouseEnter()
     {
-
+        
     }
 }
