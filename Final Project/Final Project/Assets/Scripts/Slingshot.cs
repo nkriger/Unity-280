@@ -72,7 +72,7 @@ public class Slingshot : MonoBehaviour
 
         //convert mouse Pos into 3d world space
         //use the camera to get from 3d into 2d space
-        mousePos2D.z = -Camera.main.transform.position.z;
+        mousePos2D.z = Camera.main.transform.position.z;
 
         Vector3 mousePos3D = Camera.main.ScreenToWorldPoint(mousePos2D);
 
@@ -101,7 +101,7 @@ public class Slingshot : MonoBehaviour
             projectile.GetComponent<Rigidbody>().isKinematic = false;
             projectile.GetComponent<Rigidbody>().velocity = -mouseDelta * velocityMult;
 
-            FollowCam.Instance.poi = projectile;
+            //FollowCam.Instance.poi = projectile;
             projectile = null;
 
         }
