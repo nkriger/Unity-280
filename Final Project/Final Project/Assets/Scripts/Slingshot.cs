@@ -7,7 +7,7 @@ public class Slingshot : MonoBehaviour
     public static Slingshot Instance;
 
     [SerializeField]
-    public GameObject launchPoint;
+    public GameObject stanceIcon;
 
     public GameObject prefabProjectile;
 
@@ -23,22 +23,22 @@ public class Slingshot : MonoBehaviour
     //when game starts make sure we have access to the launchPoint
     private void Awake()
     {
-        Transform launchPointTransform = transform.Find("launchPoint");
-        launchPoint = launchPointTransform.gameObject;
-        launchPoint.SetActive(false);
-        launchPos = launchPointTransform.position;
+        Transform stanceIconTransform = transform.Find("stanceIcon");
+        stanceIcon = stanceIconTransform.gameObject;
+        stanceIcon.SetActive(false);
+        launchPos = stanceIconTransform.position;
         Instance = this;
     }
 
     private void OnMouseEnter()
     {
         Debug.Log("Mouse entered");
-        launchPoint.SetActive(true);
+        stanceIcon.SetActive(true);
     }
     private void OnMouseExit()
     {
         Debug.Log("Mouse Exit");
-        launchPoint.SetActive(false);
+        stanceIcon.SetActive(false);
     }
     private void OnMouseDown()
     {
@@ -59,6 +59,7 @@ public class Slingshot : MonoBehaviour
     public void Update()
     {
         mousePosTracker();
+        guardUp();
     }
 
     private void mousePosTracker()
@@ -104,6 +105,13 @@ public class Slingshot : MonoBehaviour
             //FollowCam.Instance.poi = projectile;
             projectile = null;
 
+        }
+    }
+    void guardUp()
+    {
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            aimingMode = true;
         }
     }
 }

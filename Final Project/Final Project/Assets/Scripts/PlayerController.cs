@@ -32,9 +32,12 @@ public class PlayerController : Moveset
         */
         //removed to focus on attack freely
     }
-
-    void OnMouseEnter()
+    private void guarding()
     {
-        
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            guardUp = true;
+        }
     }
+    
 }

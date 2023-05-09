@@ -7,6 +7,8 @@ TagManager:
   - Left
   - Right
   - Top
+  - StanceIcon
+  - Stanced
   layers:
   - Default
   - TransparentFX
