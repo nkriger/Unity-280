@@ -22,6 +22,7 @@ public class PlayerController : Moveset
         movement();
         guardCheck();
         stance();
+        guarding();
     }
 
     void movement()
@@ -32,12 +33,16 @@ public class PlayerController : Moveset
         */
         //removed to focus on attack freely
     }
+
     private void guarding()
     {
         if (Input.GetKey(KeyCode.LeftControl))
         {
             guardUp = true;
         }
-    }
-    
+        if (Input.GetMouseButtonDown(0))
+        {
+            attack();
+        }
+    }    
 }

@@ -19,6 +19,8 @@ public class Moveset : MonoBehaviour
     public bool Up;
     public bool Left;
     public bool Right;
+    public bool Attacking;
+    public bool Hit;
 
     public void Update()
     {
@@ -68,7 +70,7 @@ public class Moveset : MonoBehaviour
             Up = false;
             Right = false;
             //neutral = false;
-            Debug.Log("Left");
+            //Debug.Log("Left");
         }
         else if (Right)
         {          
@@ -76,5 +78,26 @@ public class Moveset : MonoBehaviour
             Left = false;
             //neutral = false;
         }
+    }
+    public void attack()
+    {
+        StartCoroutine(Swing());
+    }
+    IEnumerator Swing()
+    {
+        guardUp = false;
+        //Print the time of when the function is first called.
+        Debug.Log("Started Attack : " + Time.time);
+        Attacking = true;
+
+        //yield on a new YieldInstruction that waits for .7 seconds.
+        yield return new WaitForSeconds(.7f);
+        Hit = true;
+
+        //After we have waited 5 seconds print the time again.
+        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+        Hit = false;
+        Attacking = false;
+        guardUp = true;
     }
 }
