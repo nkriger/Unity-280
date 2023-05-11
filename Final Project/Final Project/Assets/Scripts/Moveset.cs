@@ -22,6 +22,12 @@ public class Moveset : MonoBehaviour
     public bool Attacking;
     public bool Hit;
 
+    
+    public GameObject topAttack;
+    public GameObject rightAttack;
+    public GameObject leftAttack;
+
+
     public void Update()
     {
         guardCheck();
@@ -60,9 +66,9 @@ public class Moveset : MonoBehaviour
         */
         if (neutral)
         {
-            Left = false;
-            Right = false;
-            Up = false;
+            //Left = false;
+            //Right = false;
+            //Up = false;
         }
         if (Up)
         {                  
@@ -87,12 +93,13 @@ public class Moveset : MonoBehaviour
     public void attack()
     {
         StartCoroutine(Swing());
+        StartCoroutine(SwingUI());
     }
-    IEnumerator Swing()
+    public IEnumerator Swing()
     {
         neutral = true;
         //Print the time of when the function is first called.
-        Debug.Log("Started Attack : " + Time.time);
+        //Debug.Log("Started Attack : " + Time.time);
         Attacking = true;
 
         //yield on a new YieldInstruction that waits for .7 seconds.
@@ -100,9 +107,37 @@ public class Moveset : MonoBehaviour
         Hit = true;
 
         //After we have waited 5 seconds print the time again.
-        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+        //Debug.Log("Finished Coroutine at timestamp : " + Time.time);
         Hit = false;
         Attacking = false;
         neutral = false;
+    }
+    public IEnumerator SwingUI()
+    {
+        if (Up == true)
+        {
+            topAttack.SetActive(true);
+        }
+        if (Right == true)
+        {
+            rightAttack.SetActive(true);
+        }
+        if (Left == true)
+        {
+            leftAttack.SetActive(true);
+        }
+        //Print the time of when the function is first called.
+        //Debug.Log("Started Attack : " + Time.time);
+
+
+        //yield on a new YieldInstruction that waits for .7 seconds.
+        yield return new WaitForSeconds(.7f);
+
+        topAttack.SetActive(false);
+        rightAttack.SetActive(false);
+        leftAttack.SetActive(false);
+        //After we have waited 5 seconds print the time again.
+        //Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+
     }
 }

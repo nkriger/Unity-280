@@ -9,7 +9,8 @@ public class PlayerController : Moveset
     
     private PlayerInput playerInput;
     private Rigidbody rigidBody;
-
+    public GameObject enemy;
+    
     private void Awake()
     {
         rigidBody = GetComponent<Rigidbody>();
@@ -20,8 +21,8 @@ public class PlayerController : Moveset
     private void Update()
     {
         movement();
-        guardCheck();
-        stance();
+        //guardCheck();
+        //stance();
         guarding();
     }
 
@@ -43,6 +44,67 @@ public class PlayerController : Moveset
         if (Input.GetMouseButtonDown(0))
         {
             attack();
+            StartCoroutine(onHit());
+            //attackSwing();
         }
-    }    
+    }
+    
+    private void attackSwing()
+    {
+        //StartCoroutine(SwingUI());
+        //enemyStance = enemy.GetComponent<Enemy>();
+        StartCoroutine(onHit());
+    }
+    IEnumerator onHit()
+    {
+        yield return new WaitForSeconds(.6f);
+        if (Up == true)
+        {
+
+            if (enemy.GetComponent<Enemy>().Up == true)
+            {
+                Debug.Log("Blocked Up");
+                Up = true;
+            }
+            else
+            {
+                Debug.Log("Hit top");
+                enemy.GetComponent<Enemy>().Health -= 1;
+                Up = true;
+            }
+
+        }
+        if (Right == true)
+        {
+
+            if (enemy.GetComponent<Enemy>().Right == true)
+            {
+                Debug.Log("Blocked Right");
+                Right = true;
+            }
+            else
+            {
+                Debug.Log("Hit Right");
+                enemy.GetComponent<Enemy>().Health -= 1;
+                Right = true;
+            }
+
+        }
+        if (Left == true)
+        {
+
+            if (enemy.GetComponent<Enemy>().Left == true)
+            {
+                Debug.Log("Blocked Left");
+                Left = true;
+            }
+            else
+            {
+                Debug.Log("Hit Left");
+                enemy.GetComponent<Enemy>().Health -= 1;
+                Left = true;
+            }
+
+        }
+    }
 }

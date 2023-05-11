@@ -29,33 +29,8 @@ public class Slingshot : MonoBehaviour
         launchPos = stanceIconTransform.position;
         Instance = this;
     }
-
-    private void OnMouseEnter()
-    {
-        Debug.Log("Mouse entered");
-        stanceIcon.SetActive(true);
-    }
-    private void OnMouseExit()
-    {
-        Debug.Log("Mouse Exit");
-        stanceIcon.SetActive(false);
-    }
-    private void OnMouseDown()
-    {
-        //player has pressed mouse button for slingshot
-
-        //set aiming mode to true
-        aimingMode = true;
-
-        //instantiate a projectile
-        projectile = Instantiate(prefabProjectile);
-
-        //move it to the launch point
-        projectile.transform.position = launchPos;
-
-        projectile.GetComponent<Rigidbody>().isKinematic = true;
-    }
-
+    
+    
     public void Update()
     {
         mousePosTracker();
@@ -94,18 +69,7 @@ public class Slingshot : MonoBehaviour
         Vector3 projPos = launchPos + mouseDelta;
         projectile.transform.position = projPos;
 
-        //check if mouse is released
-        if (Input.GetMouseButtonUp(0))
-        {
-            //left mouse released
-            aimingMode = false;
-            projectile.GetComponent<Rigidbody>().isKinematic = false;
-            projectile.GetComponent<Rigidbody>().velocity = -mouseDelta * velocityMult;
-
-            //FollowCam.Instance.poi = projectile;
-            projectile = null;
-
-        }
+        
     }
     void guardUp()
     {
