@@ -58,7 +58,12 @@ public class Moveset : MonoBehaviour
             Right = false;
         }
         */
-       
+        if (neutral)
+        {
+            Left = false;
+            Right = false;
+            Up = false;
+        }
         if (Up)
         {                  
             Left = false;
@@ -85,7 +90,7 @@ public class Moveset : MonoBehaviour
     }
     IEnumerator Swing()
     {
-        guardUp = false;
+        neutral = true;
         //Print the time of when the function is first called.
         Debug.Log("Started Attack : " + Time.time);
         Attacking = true;
@@ -98,6 +103,6 @@ public class Moveset : MonoBehaviour
         Debug.Log("Finished Coroutine at timestamp : " + Time.time);
         Hit = false;
         Attacking = false;
-        guardUp = true;
+        neutral = false;
     }
 }
